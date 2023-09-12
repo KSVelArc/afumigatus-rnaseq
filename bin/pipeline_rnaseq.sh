@@ -37,11 +37,11 @@ process_sra() {
     sra_sra="$sra_dir/$sra.sra"
     
     # Download SRA data
-    #prefetch "$sra" --output-file "$sra_sra"
+    prefetch "$sra" --output-file "$sra_sra"
     
     # Convert SRA to FASTQ
-    #fastq-dump "$sra_sra" --outdir "$sra_dir"
-    #gzip "$sra_dir/$sra.fastq"
+    fastq-dump "$sra_sra" --outdir "$sra_dir"
+    gzip "$sra_dir/$sra.fastq"
     
     # Map reads to reference genome
     hisat2 -p 8 --dta -x "$index_prefix" -U "$sra_dir/$sra.fastq.gz" -S "$sra_dir/$sra.sam"

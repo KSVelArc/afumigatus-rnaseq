@@ -1,6 +1,6 @@
 FUNGI RNA-SEQ DATA PROCESSING AND ANALYSIS
 ==========================================
-` velazqks `
+` KSVelArc `
 
 Fungi have diverse and unique lifestyles. For instance, the digestion of their food takes place outside of the fungal body before consuming it. This mechanism is aided by the secretion of enzymes and acids into the environment ([Brakhage, 2013](https://doi.org/10.1038/nrmicro2916), [Keller, 2019](https://doi.org/10.1038/s41579-018-0121-1)). The ability to synthesize a variety of molecules that support the survival in hostile environments has probably been one of the bases for the evolution of some of the most pathogenic organisms we know. Fungi in the Aspergillus genus are especially recognized as the most pathogenic, and A. fumigatus is the most pathogenic of these species, responsible for 90% of the infections ([Lin, 2001](https://doi.org/10.1086/318483)). Living inside a host organism poses many challenges to pathogens. To evade the immune system, reactive oxidative species (ROS) and heat shock stress, mechanisms to surpass these stress responses are essential ([Grützmann et al., 2014](https://doi.org/10.1093/dnares/dst038)). Many genes involved in pathogenicity in A. fumigatus have been reported ([Abad et al., 2010](https://doi.org/10.1016/j.riam.2010.10.003)). The most relevant groups are involved in thermotolerance, cell wall composition, immune response avoidance, toxin production, nutrient acquisition, and response to stress.
 
@@ -8,9 +8,16 @@ Alternative splicing generates higher variation in the expression in the genome 
 
 Here, I processed RNA-Seq data from 4 wild-type A fumigatus samples ([Lind et al., 2016](https://doi.org/10.1534/g3.116.033084)): two samples grown at 30⁰ and two samples grown at 37⁰, as a proxy to body temperature. The reads were aligned to the FingiDB reference genome and annotations using HISAT2. The transcripts were assembled and quantified with StringTie. Transcript counts were generated using StringTie's prepDE.py. Transcript-level differential expression analysis was done using Ballgown.
 
-`bin/pipeline_rnaseq.sh` generates the raw data.
+`bin/pipeline_rnaseq.sh`
+- Downloads the Aspergillus fumigatus reference genome, annotations, and RNA-Seq reads from cultures grown at 30C and 37C.
+      generates the raw data.
+- Indexes the reference genome and maps the reads to the reference genome with HISAT2.
+- Assembles and quantifies the transcripts with StringTie.
+- Estimates transcript abundances and creates table counts for Ballgown using StringTie.
 
-`data/` already contains the Ballgown data to run differential expression analyses.
+
+`data/`\
+Already contains the Ballgown data to run differential expression analyses.
 
 <br>
 
