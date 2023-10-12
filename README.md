@@ -10,11 +10,9 @@ Here, I processed RNA-Seq data from 4 wild-type A fumigatus samples ([Lind et al
 
 `bin/pipeline_rnaseq.sh`
 - Downloads the Aspergillus fumigatus reference genome, annotations, and RNA-Seq reads from cultures grown at 30C and 37C.
-      generates the raw data.
 - Indexes the reference genome and maps the reads to the reference genome with HISAT2.
 - Assembles and quantifies the transcripts with StringTie.
 - Estimates transcript abundances and creates table counts for Ballgown using StringTie.
-
 
 `data/`\
 Already contains the Ballgown data to run differential expression analyses.
