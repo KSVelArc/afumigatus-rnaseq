@@ -1,5 +1,12 @@
 SRA Toolkit: prefetch and fastq-dump
-AGAT: agat_convert_sp_gff2gtf.pl. https://github.com/NBISweden/AGAT
+https://github.com/ncbi/sra-tools/wiki/01.-Downloading-SRA-Toolkit
+ln -s sratoolkit.3.0.7-mac64/bin/fastq-dump /usr/local/bin/fastq-dump
+ln -s sratoolkit.3.0.7-mac64/bin/prefetch /usr/local/bin/prefetch
+
+AGAT: agat_convert_sp_gff2gtf.pl. 
+https://github.com/NBISweden/AGAT
+conda install -c bioconda agat
+
 HISAT2. https://daehwankimlab.github.io/hisat2/download/
 SAMtools. http://www.htslib.org/download/
 StringTie and prepDE.py. https://github.com/gpertea/stringtie
